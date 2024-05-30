@@ -20,7 +20,6 @@ import StepsSlider from "./Components/StepsSlider";
 import LottieAnimation from "./Components/LottieAnimation";
 
 
-
 export default function Home() {
   const cardStyle = {
     backgroundImage: `url(${webDesign.src})`,
@@ -39,6 +38,8 @@ export default function Home() {
     backgroundPosition: 'center'
 
   };
+  
+                
   const [menuOpen, setMenuOpen] = useState(false)
   console.log(menuOpen,"asdas")
   return (
@@ -155,15 +156,28 @@ export default function Home() {
             <div class="section5-button">
               Web Design
             </div>
+            <div className="show-hover">
+              <p style={{fontSize:'28px' , fontWeight:700, color:'#fff', paddingBottom:'8px'}}> Web Design</p>
+              <p style={{fontSize:'10px' , fontWeight:400, color:'#fff'}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nisl eros, pulvinar facilisis justo mollis </p>
+            </div>
           </div>
           <div class="section5-card" style={cardStyle1}>
             <div class="section5-button">
               Web Development
             </div>
+            <div className="show-hover">
+              <p style={{fontSize:'28px' , fontWeight:700, color:'#fff', paddingBottom:'8px'}}> Web Development</p>
+              <p style={{fontSize:'10px' , fontWeight:400, color:'#fff'}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nisl eros, pulvinar facilisis justo mollis </p>
+            </div>
           </div>
           <div class="section5-card" style={cardStyle2}>
             <div class="section5-button">
               UI &UX Design
+            </div>
+            
+            <div className="show-hover">
+              <p style={{fontSize:'28px' , fontWeight:700, color:'#fff', paddingBottom:'8px'}}> UI &UX Design</p>
+              <p style={{fontSize:'10px' , fontWeight:400, color:'#fff'}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nisl eros, pulvinar facilisis justo mollis </p>
             </div>
           </div>
         </div>

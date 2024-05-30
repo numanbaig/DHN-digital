@@ -3,8 +3,11 @@ import { Html, Head, Main, NextScript } from "next/document";
 export default function Document() {
   return (
     <Html lang="en">
-      <Head />
+      <Head >
+      <link rel="preconnect" href="https://fonts.cdnfonts.com/css/satoshi" />
+        </Head>
       <body>
+        
         <Main />
         <NextScript />
       </body>
