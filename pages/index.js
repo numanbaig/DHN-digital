@@ -41,15 +41,14 @@ export default function Home() {
   
                 
   const [menuOpen, setMenuOpen] = useState(false)
-  console.log(menuOpen,"asdas")
+
   return (
     <>
-      <section class="header-section">
-      
+      <section style={{ alignContent: 'center', height: '72px' }}>
         <div className="spacer">
           <header className="header flex" style={{ position: 'relative' }}>
             <div>
-              <Image src={logo} alt="Logo" className="logo" width={"170px"} height={80} />
+              <Image src={logo} alt="Logo" className="logo" width={170} height={48} />
             </div>
             <div className="header-btn-container">
               <button className="btn-secondary login-button">Log in</button>
