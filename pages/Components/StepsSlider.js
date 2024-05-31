@@ -11,7 +11,7 @@ const StepsSlider = () => {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplay: true,
+    // autoplay: true,
     autoplaySpeed: 2000,
     responsive: [
       {
@@ -43,10 +43,10 @@ const StepsSlider = () => {
   ];
 
   return (
-    <div className="stepsSlider-container">
+    <div className="stepsSlider-container" >
       <Slider {...settings}>
         {steps.map((step, index) => (
-          <div className="section3-cards" key={index}>
+          <div className="section3-cards" key={index} style={{marginBottom:"10px"}}>
             <div className="section3-button">{index + 1}</div>
             <h1>{step}</h1>
             <p className="paragraph">

@@ -33,8 +33,8 @@ const Slideshow = () => {
   }, [currentIndex]);
 
   return (
-    <div style={{width:'100%'}}>
-      <h1 className='heading' style={{textAlign:'center'}}>Improve your</h1>
+    <div className='slider-improve' style={{width:'100%'}}>
+      <h1 className='heading' style={{textAlign:'center', fontSize:'34px'}}>Improve your</h1>
     <div className={`slide-container flex`}>
       <p>Costumer Satisfy</p>
       <p>Improves Accuracy</p>

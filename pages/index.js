@@ -51,7 +51,7 @@ export default function Home() {
               <Image src={logo} alt="Logo" className="logo" width={170} height={48} />
             </div>
             <div className="header-btn-container">
-              <button className="btn-secondary login-button">Log in</button>
+              <button className="btn-secondary1 login-button">Log in</button>
               <button className="btn-primary">Contact Us</button>
              
                   <Image onClick={() => {setMenuOpen(!menuOpen)}} height={24} width={24} style={{ marginLeft: '14px' }} src={ menuOpen ? cancelIcon :menuIcon} alt="Menu Button" />
@@ -62,7 +62,7 @@ export default function Home() {
       </section>
       <section className="section1" id="section">
         <div className="sec1-container spacer">
-          <div>
+          <div style={{maxWidth:'658px'}}>
             <h1 className="heading" style={{ color: '#fff' }}>
               Digitalization for the self-<br />employed and SEMs.
             </h1>
@@ -83,7 +83,7 @@ export default function Home() {
       <div className="background">
       <section className="sec2-container spacer">
         <div className="sec2-inner-container">
-          <div>
+          <div className="sec2-card">
             <h1 className="heading">Automation (AI)</h1>
             <p className="paragraph" style={{ paddingTop: '30px', paddingBottom: '16px' }}>
               Time is money. <br />Automate your processes and save both.
@@ -94,7 +94,7 @@ export default function Home() {
               you to automate your workflows and save both time and costs. This allows you to fully focus on your core tasks.
             </p>
             <div className="sec2-bnt-container">
-              <button className="btn-secondary">Contact Us</button>
+              <button className="btn-secondary1">Contact Us</button>
               <button className="btn-primary">Book a demo</button>
             </div>
           </div>
@@ -152,12 +152,16 @@ export default function Home() {
         <div class="section5-container grid3">
 
           <div class="section5-card" style={cardStyle}>
+          <div className="overlay">
+
+</div>
             <div class="section5-button">
               Web Design
             </div>
+            
             <div className="show-hover">
               <p style={{fontSize:'28px' , fontWeight:700, color:'#fff', paddingBottom:'8px'}}> Web Design</p>
-              <p style={{fontSize:'10px' , fontWeight:400, color:'#fff'}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nisl eros, pulvinar facilisis justo mollis </p>
+              <p style={{fontSize:'10px' , fontWeight:400, color:'#fff', width:'291px'}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nisl eros, pulvinar facilisis justo mollis </p>
             </div>
           </div>
           <div class="section5-card" style={cardStyle1}>
@@ -166,7 +170,7 @@ export default function Home() {
             </div>
             <div className="show-hover">
               <p style={{fontSize:'28px' , fontWeight:700, color:'#fff', paddingBottom:'8px'}}> Web Development</p>
-              <p style={{fontSize:'10px' , fontWeight:400, color:'#fff'}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nisl eros, pulvinar facilisis justo mollis </p>
+              <p style={{fontSize:'10px' , fontWeight:400, color:'#fff', width:'291px'}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nisl eros, pulvinar facilisis justo mollis </p>
             </div>
           </div>
           <div class="section5-card" style={cardStyle2}>
@@ -176,7 +180,7 @@ export default function Home() {
             
             <div className="show-hover">
               <p style={{fontSize:'28px' , fontWeight:700, color:'#fff', paddingBottom:'8px'}}> UI &UX Design</p>
-              <p style={{fontSize:'10px' , fontWeight:400, color:'#fff'}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nisl eros, pulvinar facilisis justo mollis </p>
+              <p style={{fontSize:'10px' , fontWeight:400, color:'#fff', width:"251px"}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nisl eros, pulvinar facilisis justo mollis </p>
             </div>
           </div>
         </div>
@@ -185,9 +189,9 @@ export default function Home() {
       <section className="section6 spacer">
         <h1 className="heading text-center">We help SMEs out of conviction</h1>
         <p className="sab-paragraph text-center" style={{ paddingTop: '6px' }}>
-          As two young and digitally savvy minds from Northern Germany, we have set ourselves the goal of providing German medium-sized businesses with advice and support in the digital age. We achieve this with our expertise and an extensive network of digital specialists.
+        As two young and digitally savvy minds from Northern Germany, we have set ourselves the goal of providing German medium-sized businesses with advice and support in the digital age. We achieve this with our expertise and an extensive network of digital specialists.. .
         </p>
-        <div className="section6-container grid2">
+        <div className="section6-container ">
           {[
             { name: 'Djark Andresen', title: 'Managing Director', image: dJark },
             { name: 'Hauke ​​Kay Pleß', title: 'Managing Director', image: hauke },
@@ -195,8 +199,8 @@ export default function Home() {
             <div className="section6-card" key={index}>
               <p className="paragraph" style={{ fontWeight: 700 }}>{person.name}</p>
               <p className="sab-paragraph" style={{ fontSize: '16px' }}>{person.title}</p>
-              <p className="sab-paragraph" style={{ paddingTop: '30px' }}>
-                DHN provides an Intelligent Document Processing solution that converts imported data from various document types into the desired results. Thanks to AI technology, you are able to extract all important data from your documents and process it according to your purpose.
+              <p className="sab-paragraph" style={{ paddingTop: '10px' }}>
+              As two young and digitally savvy minds from Northern Germany, we have set ourselves. 
               </p>
               <div style={{ paddingTop: '47px' }}>
                 <Image src={person.image} />
@@ -212,7 +216,7 @@ export default function Home() {
         <div class="FAQs-Container grid3">
           <div class=" FAQs-card shadow">
             <p class="sab-paragraph" style={{ color: '#567bd9', fontWeight: '700' }}> What does working with you start?</p>
-            <p class="sab-paragraph" style={{ fontSize: "16px", paddingTop: "6px" }}>
+            <p class="sab-paragraph faq-text" style={{  paddingTop: "6px" }}>
               Personal contact is particularly important to us. Therefore, we first explore your potential and the
               possibilities for collaboration in a detailed discussion. Please contact us if you would like to have a
               non-binding initial consultation to find out whether we are a good fit and how we could help you. Should
@@ -223,7 +227,7 @@ export default function Home() {
           <div class="FAQs-card shadow">
             <p class="sab-paragraph" style={{ color: '#567bd9', fontWeight: '700' }}> What benefits do I get from working with
               you? </p>
-            <ul class="sab-paragraph" style={{ fontSize: "16px", padding: "6px 15px 0px 15px" }}>
+            <ul class="sab-paragraph faq-text" style={{ padding: "6px 15px 0px 15px" }}>
               <li class="sab-paragraph-li">Personal support from start to finish</li>
               <li class="sab-paragraph-li"> Trusting, long-term relationship</li>
               <li class="sab-paragraph-li">Constant availability – We are available at any time for urgent concerns and problems</li>
@@ -233,7 +237,7 @@ export default function Home() {
           </div>
           <div class="FAQs-card shadow">
             <p class="sab-paragraph" style={{ color: '#567bd9', fontWeight: '700' }}> Can you do everything yourself?</p>
-            <p class="sab-paragraph" style={{ fontSize: "16px", paddingTop: "6px" }}>
+            <p class="sab-paragraph faq-text" style={{  paddingTop: "6px" }}>
               No. However, we bring our full expertise to every project. To ensure the best possible performance, we
               also work with partners who are absolute specialists in their fieldand whom we can completely trust.
               This way we can achieve the optimal result for you
@@ -248,7 +252,7 @@ export default function Home() {
         <div class="shadow contect-container" style={{ padding: "19px" }}>
           <div class="contect-card">
             <h2 class="heading" style={{ fontSize: '34px', color: "#fff", paddingBottom: '6px' }} >Contact Information </h2>
-            <p class="sab-paragraph" style={{ fontSize: "16px", color: '#C9C9C9' ,marginBottom:"60px"}} > Please leave us your contact details for
+            <p class="sab-paragraph faq-text" style={{  color: '#C9C9C9' ,marginBottom:"60px"}} > Please leave us your contact details for
               a
               non-binding initial consultation.</p>
             <div styles={{ marginTop: '74px' }}>
