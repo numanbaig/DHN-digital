@@ -109,7 +109,7 @@ export default function Home() {
 
   return (
     <>
-      <section style={{ alignContent: 'center', height: '72px' }}>
+      <section className="header-container" >
         <div className="spacer">
           <header className="header flex" style={{ position: 'relative' }}>
             <div>
@@ -372,9 +372,8 @@ export default function Home() {
                       <ErrorMessage className="error-message" name="message" component="div" />
                     </div>
                     <div className="contact-btn">
-                      <button type="submit" disabled={isSubmitting}>Send Message</button>
+                      <button type="submit" disabled={formSubmitted}> {formSubmitted ?"Form submitted successfully":"Send Message"}</button>
                     </div>
-                    {formSubmitted && <p>Form submitted successfully!</p>}
                   </Form>
                 )}
               </Formik>

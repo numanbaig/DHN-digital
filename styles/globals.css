@@ -52,6 +52,10 @@ input:-internal-autofill-selected{
 .header {
   padding: 12px 0px;
 }
+.header-container{
+  align-content: center;
+  height: 72px;
+}
 
 .header-btn-container {
   display: flex;
@@ -694,6 +698,10 @@ transition: background-color 0.3s ease, box-shadow 0.3s ease;
   .spacer {
     padding-left: 20px;
     padding-right: 20px;
+  }
+  .header-container{
+    box-shadow: 0px 4px 4px 0px #00000040;
+
   }
   .sec1-container {
     flex-direction: column;
