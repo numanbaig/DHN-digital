@@ -9,7 +9,7 @@ export default async function handler(
   if (request.method === 'POST') {
     try {
       console.log(request.body, 'bodyyy')
-      const { organisation, tel, email, kontakt, message } = request.body
+      const { firstName, lastName, email, phoneNumber, message } = request.body;
       const transporter = nodemailer.createTransport({
         // Set your email service credentials
         service: 'gmail',
@@ -21,11 +21,11 @@ export default async function handler(
       // Create email message
       const mailOptions = {
         from: process.env.NODEMAILER_EMAIL,
-        to: 'kontakt@norwerk.dk',
+        to: 'numansafi97@gmail.com',
         subject: 'User Contact Data',
 
         // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-        text: `Organization: ${organisation}\nTelphone: ${tel}\nEmail: ${email}\nContactPerson: ${kontakt}\nMessage: ${message}`
+        text: `First name: ${firstName}\nLastName:${lastName}\nTelphone: ${phoneNumber}\nEmail: ${email}\nMessage: ${message}`
       }
       await transporter.sendMail(mailOptions)
       res.status(200).json({ success: true })
