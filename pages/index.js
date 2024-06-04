@@ -87,8 +87,6 @@ export default function Home() {
   }, [menuOpen]);
 
   const onSubmit = async (values, { resetForm }) => {
-    
-    
    
         if (!executeRecaptcha) {
           console.log('Execute recaptcha not yet available');
@@ -97,7 +95,7 @@ export default function Home() {
     
         const token = await executeRecaptcha('yourAction');
 
-
+console.log("hiting")
 
     try {
       const response = await fetch('/api/handelForm', {
@@ -105,7 +103,7 @@ export default function Home() {
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify(...values ,token)
+        body: JSON.stringify(values)
       });
       console.log(response, 'hereee');
       setFormSubmitted(true);
