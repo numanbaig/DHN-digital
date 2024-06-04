@@ -20,7 +20,7 @@ import StepsSlider from "./Components/StepsSlider";
 import LottieAnimation from "./Components/LottieAnimation";
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
-import { GoogleReCaptcha } from "react-google-recaptcha-v3";
+import { GoogleReCaptcha, useGoogleReCaptcha } from "react-google-recaptcha-v3";
 
 export default function Home() {
   const initialValues = {
@@ -56,13 +56,14 @@ export default function Home() {
 
   };
 
-
   const [menuOpen, setMenuOpen] = useState(false)
   const [formSubmitted, setFormSubmitted] = useState(false);
-  const [token, setToken] = useState("6LdJr_ApAAAAAJwsg5FdAKiqBxOPDM3HoOJpMcaF");
+  // const [token, setToken] = useState("6LdJr_ApAAAAAJwsg5FdAKiqBxOPDM3HoOJpMcaF");
   const menuRef = useState(null)
   const faqsRef = useRef(null);
   const aiRef = useRef(null);
+  const { executeRecaptcha } = useGoogleReCaptcha();
+
 
   const scrollToSection = (ref) => {
     ref.current.scrollIntoView({ behavior: 'smooth' });
@@ -86,13 +87,25 @@ export default function Home() {
   }, [menuOpen]);
 
   const onSubmit = async (values, { resetForm }) => {
+    
+    
+   
+        if (!executeRecaptcha) {
+          console.log('Execute recaptcha not yet available');
+          return;
+        }
+    
+        const token = await executeRecaptcha('yourAction');
+
+
+
     try {
       const response = await fetch('/api/handelForm', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify(values)
+        body: JSON.stringify(...values ,token)
       });
       console.log(response, 'hereee');
       setFormSubmitted(true);
@@ -377,15 +390,7 @@ export default function Home() {
                       <button type="submit" disabled={formSubmitted}> {formSubmitted ? "Form submitted successfully" : "Send Message"}</button>
                     </div>
 
-                    {/* <GoogleReCaptcha
-                      sitekey="6LdJr_ApAAAAAJwsg5FdAKiqBxOPDM3HoOJpMcaF"
-                      onChange={setRecaptchaToken}
-                    /> */}
-                     <GoogleReCaptcha
-        onVerify={token => {
-          setToken(token);
-        }}
-      />
+                    
 
                   </Form>
                 )}
