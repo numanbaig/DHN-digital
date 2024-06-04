@@ -1,7 +1,5 @@
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 
 import nodemailer from 'nodemailer'
-// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types, @typescript-eslint/explicit-function-return-type
 export default async function handler(
   request,
   res
@@ -11,7 +9,6 @@ export default async function handler(
       console.log(request.body, 'bodyyy')
       const { firstName, lastName, email, phoneNumber, message } = request.body;
       const transporter = nodemailer.createTransport({
-        // Set your email service credentials
         service: 'gmail',
         auth: {
           user: process.env.NODEMAILER_EMAIL,
@@ -24,7 +21,6 @@ export default async function handler(
         to: 'numansafi97@gmail.com',
         subject: 'User Contact Data',
 
-        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
         text: `First name: ${firstName}\nLastName:${lastName}\nTelphone: ${phoneNumber}\nEmail: ${email}\nMessage: ${message}`
       }
       await transporter.sendMail(mailOptions)

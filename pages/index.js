@@ -20,6 +20,7 @@ import StepsSlider from "./Components/StepsSlider";
 import LottieAnimation from "./Components/LottieAnimation";
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
+import { GoogleReCaptcha } from "react-google-recaptcha-v3";
 
 export default function Home() {
   const initialValues = {
@@ -58,6 +59,7 @@ export default function Home() {
 
   const [menuOpen, setMenuOpen] = useState(false)
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [token, setToken] = useState("6LdJr_ApAAAAAJwsg5FdAKiqBxOPDM3HoOJpMcaF");
   const menuRef = useState(null)
   const faqsRef = useRef(null);
   const aiRef = useRef(null);
@@ -83,7 +85,7 @@ export default function Home() {
     };
   }, [menuOpen]);
 
-  const onSubmit = async (values,{  resetForm}) => {
+  const onSubmit = async (values, { resetForm }) => {
     try {
       const response = await fetch('/api/handelForm', {
         method: 'POST',
@@ -93,8 +95,8 @@ export default function Home() {
         body: JSON.stringify(values)
       });
       console.log(response, 'hereee');
-    setFormSubmitted(true);
-    resetForm()
+      setFormSubmitted(true);
+      resetForm()
 
     } catch (error) {
 
@@ -103,7 +105,7 @@ export default function Home() {
 
   };
 
-  
+
 
 
 
@@ -372,8 +374,19 @@ export default function Home() {
                       <ErrorMessage className="error-message" name="message" component="div" />
                     </div>
                     <div className="contact-btn">
-                      <button type="submit" disabled={formSubmitted}> {formSubmitted ?"Form submitted successfully":"Send Message"}</button>
+                      <button type="submit" disabled={formSubmitted}> {formSubmitted ? "Form submitted successfully" : "Send Message"}</button>
                     </div>
+
+                    {/* <GoogleReCaptcha
+                      sitekey="6LdJr_ApAAAAAJwsg5FdAKiqBxOPDM3HoOJpMcaF"
+                      onChange={setRecaptchaToken}
+                    /> */}
+                     <GoogleReCaptcha
+        onVerify={token => {
+          setToken(token);
+        }}
+      />
+
                   </Form>
                 )}
               </Formik>
