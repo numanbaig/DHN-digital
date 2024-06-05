@@ -403,15 +403,15 @@ export default function Home() {
                       <Field className="contect-input" type="text" id="message" name="message" style={{ maxWidth: "100%" }} />
                       <ErrorMessage className="error-message" name="message" component="div" />
                     </div>
-                    <div className=" submit-btn flex">
-                      <div style={{ width: '200px ', height: '20px' }}>
+                    <div style={{marginTop:'40px'}}>
 
-                        <ReCAPTCHA
-                          sitekey={SITE_KEY}
-                          onChange={onChange}
-                          ref={recaptcha}
-                        />
-                      </div>
+                      <ReCAPTCHA
+                        sitekey={SITE_KEY}
+                        onChange={onChange}
+                        ref={recaptcha}
+                      />
+                    </div>
+
                       <div className="contact-btn">
                         <button type="submit"
                         //  disabled={ loading} 
@@ -423,7 +423,6 @@ export default function Home() {
                         </button>
                       </div>
 
-                    </div>
                   </Form>
                 )}
               </Formik>

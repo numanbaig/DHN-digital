@@ -713,10 +713,13 @@ transition: background-color 0.3s ease, box-shadow 0.3s ease;
     font-weight: 400;
     
   }
+  
+
   .submit-btn{
+    position: relative;
     margin-top: 40px;
     flex-direction: column;
-    gap: 50px;
+    gap: 40px;
   }
   .left-arrow{
     display: none;
@@ -762,9 +765,7 @@ transition: background-color 0.3s ease, box-shadow 0.3s ease;
 
  }
  .menu-container {
-  top: 7%;
-  height: 100%;
-  height: 30%;
+  top: 10%;
   box-shadow: 2px 20px 40px 0px #7077D833;
 }
 .nav-bar {
@@ -824,6 +825,10 @@ transition: background-color 0.3s ease, box-shadow 0.3s ease;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+  }
+  .recaptcha{
+    position: absolute;
+    left: 6%;
   }
 
  
