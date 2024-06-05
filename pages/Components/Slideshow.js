@@ -23,9 +23,7 @@ const SlideShow = () => {
           p.classList.add('blur');
         }
 
-        // Debugging statements
-        console.log(`Paragraph ${i}: transform = ${p.style.transform}`);
-        console.log(`Paragraph ${i}: classList = ${p.classList}`);
+      
       }
     };
 

@@ -7,7 +7,7 @@ export default async function handler(
   if (request.method === 'POST') {
     try {
       console.log(request.body, 'bodyyy')
-      const { firstName, lastName, email, phoneNumber, message } = request.body;
+      const { firstName, lastName, email, phoneNumber, message , reCaptchaValue} = request.body;
       const transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
