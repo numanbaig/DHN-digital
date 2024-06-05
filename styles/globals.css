@@ -713,6 +713,11 @@ transition: background-color 0.3s ease, box-shadow 0.3s ease;
     font-weight: 400;
     
   }
+  .submit-btn{
+    margin-top: 40px;
+    flex-direction: column;
+    gap: 50px;
+  }
   .left-arrow{
     display: none;
   }
