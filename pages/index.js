@@ -34,48 +34,54 @@ import chatbotsIcon from "../public/assist/image/Chatbots.svg"
 
 
 
-const SIMPLE_STEPS= [
+const SIMPLE_STEPS = [
   {
-    title:'Ideation',
-    icon:steps1
+    title: 'Ideenfindung',
+    icon: steps1,
+    dec: 'Zusammen <span style="color:#140A8B">analysieren  </span>wir Ihre Aufgaben und Prozesse und finden Anwendungsfälle mit echtem Mehrwehrt'
   },
   {
-    title:'Solution Concept',
-    icon:steps2
+    title: 'Lösungskonzept',
+    icon: steps2,
+    dec: 'Wir erarbeiten <span style="color:#140A8B"> gemeinsam  Lösungsideen </span> für die Anwendungsfälle.'
   },
   {
-    title:'Prototype & Poc',
-    icon:steps3
+    title: 'Prototyp & PoC',
+    icon: steps3,
+    dec: 'Mit schnellen  <span style="color:#140A8B"> Prototypen und Proof </span> of Concepts prüfen wir die Lösungsideen.'
   },
   {
-    title:'MVP & Testing',
-    icon:steps4
+    title: 'MVP & Tests',
+    icon: steps4,
+    dec: 'Vielversprechende <span style="color:#140A8B"> Prototypen entwickeln </span> wir zügig zu funktionierenden, echten Lösungen.'
   },
   {
-    title:'Installations           ',
-    icon:steps5
+    title: 'Inbetriebnahme',
+    icon: steps5,
+    dec: 'Gemeinsam <span style="color:#140A8B"> integrieren wir die fertige </span> Lösung in die bestehenden Abläufe und Prozesse.'
   },
   {
-    title:'Scaling',
-    icon:steps6
+    title: 'Skalierung',
+    icon: steps6,
+    dec: 'Erfolgreiche Lösungen  bringen wir in die <span style="color:#140A8B">  breite Anwendung. </span>'
   }
-] 
+]
 const WORKSHOPS = [
   {
-    heading:'Beratung',
-    title:'Wir helfen Ihnen dabei, echten Mehrwert aus dem KI-Hype zu ziehen. Gemeinsam finden wir die besten Einsatzmöglichkeiten für KI in Ihrem Unternehmen, um Sie auch weiterhin wettbewerbsfähig in der Zukunft aufzustellen.',
-    icon:beratungIcon
+    heading: 'Beratung',
+    title: 'Wir helfen Ihnen dabei, echten Mehrwert aus dem KI-Hype zu ziehen. Gemeinsam finden wir die besten Einsatzmöglichkeiten für KI in Ihrem Unternehmen, um Sie auch weiterhin wettbewerbsfähig in der Zukunft aufzustellen.',
+    icon: beratungIcon
 
   },
   {
-    heading:'KI Workshops',
-    title:'Wir klären Ihr Team über Chancen, Risiken und den richtigen Umgang mit KI-Technologien auf und verschaffen Ihnen einen ganzheitlichen Überblick. Live und mit individuellen, praxisbezogenen Beispielen schulen wir Ihre Mitarbeiter in der direkten Anwendung von KI-Lösungen im Arbeitsalltag.',
-    icon:workshopIcon
+    heading: 'KI Workshops',
+    title: 'Wir klären Ihr Team über Chancen, Risiken und den richtigen Umgang mit KI-Technologien auf und verschaffen Ihnen einen ganzheitlichen Überblick. Live und mit individuellen, praxisbezogenen Beispielen schulen wir Ihre Mitarbeiter in der direkten Anwendung von KI-Lösungen im Arbeitsalltag.',
+    icon: workshopIcon
 
   }, {
-    heading:'Individuelle Chatbots',
-    title:'Erleichtern Sie Ihre interne sowie externe Kommunikation und steigern Sie Ihre Produktivität. Arbeiten Sie effizient mit Ihren eigenen Daten.',
-    icon:chatbotsIcon
+    heading: 'Individuelle Chatbots',
+    title: 'Erleichtern Sie Ihre interne sowie externe Kommunikation und steigern Sie Ihre Produktivität. Arbeiten Sie effizient mit Ihren eigenen Daten.',
+    icon: chatbotsIcon
 
   }
 ]
@@ -268,14 +274,15 @@ export default function Home() {
           <div className="section3-container grid3">
             {SIMPLE_STEPS.map((step, index) => (
               <div className="section3-cards" key={index}>
-                <div style={{display:'flex' , justifyContent:'space-between', alignItems:'center'}}>
-                <div className="section3-button">{index + 1}</div>
-                <Image src={step.icon} width={40} height={30} />
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                  <div className="section3-button">{index + 1}</div>
+                  <Image src={step.icon} width={40} height={30} />
                 </div>
                 <h1>{step.title}</h1>
-                <p className="paragraph">
-                  Ideation sparks creativity, <span style={{ color: '#567bd9' }}>driving innovation in</span> problem-solving and product development. Ideation sparks creativity, driving innovation in problem-solving and product development.
-                </p>
+                <p className="paragraph"
+                  dangerouslySetInnerHTML={{ __html:step.dec }}
+                />
+                
                 <div className="section3-button-container ">
                   {/* <button className="btn-secondary">Lorem ipsum</button>
                   <button className="btn-secondary">Lorem ipsum</button>
@@ -295,10 +302,10 @@ export default function Home() {
           <div className="section4-container grid3">
             {WORKSHOPS.map((items, index) => (
               <div className="section4-cards shadow" key={index}>
-                <div style={{display:"flex", justifyContent:'end'}}> <Image src={items.icon} width={40} height={30}/> </div>
-                <h2 className="heading" style={{fontSize:'30px' , marginTop:"20px"}}>{items.heading}</h2>
+                <div style={{ display: "flex", justifyContent: 'end' }}> <Image src={items.icon} width={40} height={30} /> </div>
+                <h2 className="heading" style={{ fontSize: '30px', marginTop: "20px" }}>{items.heading}</h2>
                 <p className="sab-paragraph">{items.title}</p>
-              
+
               </div>
             ))}
           </div>
@@ -351,11 +358,16 @@ export default function Home() {
           </p>
           <div className="section6-container ">
             {[
-              { name: 'Nils Espey', title: 'Geschäftsführer', dec: "Ihr Ansprechpartner & Berater für alles rund um Ihre Projekte. Ein echter Macher!", image: dJark },
+              {
+                name: 'Nils Espey',
+                title: 'Geschäftsführer',
+                dec: "Ihr Ansprechpartner & Berater für alles rund um Ihre Projekte. Ein echter Macher!",
+                image: dJark
+              },
               {
                 name: 'Hauke ​​Kay Pleß',
                 title: 'Geschäftsführer',
-                disc: 'Ihr pragmatischer Lösungsarchitekt im Hintergrund. Ein echter Stratege!',
+                dec: 'Ihr pragmatischer Lösungsarchitekt im Hintergrund. Ein echter Stratege!',
                 image: hauke
               },
             ].map((person, index) => (
@@ -363,7 +375,7 @@ export default function Home() {
                 <p className="paragraph" style={{ fontWeight: 700 }}>{person.name}</p>
                 <p className="sab-paragraph" style={{ fontSize: '16px' }}>{person.title}</p>
                 <p className="sab-paragraph" style={{ paddingTop: '10px' }}>
-                  As two young and digitally savvy minds from Northern Germany, we have set ourselves.
+                  {person.dec}
                 </p>
                 <div style={{ paddingTop: '47px' }}>
                   <Image src={person.image} />
