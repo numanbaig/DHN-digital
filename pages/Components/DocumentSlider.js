@@ -27,11 +27,11 @@ const DocumentSlider = () => {
   return (
     <div className="slider-buttons">
       <Slider {...settings}>
-        <div className="slide-item">Delivery Documents</div>
-        <div className="slide-item">Bills</div>
-        <div className="slide-item">Orders</div>
-        <div className="slide-item">Contracts</div>
-        <div className="slide-item">And much more</div>
+        <div className="slide-item">Lieferdokumente</div>
+        <div className="slide-item">Rechnungen</div>
+        <div className="slide-item">Bestellungen</div>
+        <div className="slide-item">Verträge</div>
+        <div className="slide-item">…und vieles mehr</div>
       </Slider>
     </div>
   );

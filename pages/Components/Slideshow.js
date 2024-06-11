@@ -55,20 +55,25 @@ const SlideShow = () => {
 
   return (
     <div className='slider-improve' style={{width:'100%'}}>
-      <h1 className='heading' style={{textAlign:'center', fontSize:'34px'}}>Improve your</h1>
+      <h1 className='heading' style={{textAlign:'center', fontSize:'34px'}}>Verbesserm Sie jetzt</h1>
     <div className={`slide-container flex`}>
-      <p style={{display:'none'}}>Costumer Satisfy</p>
-      <p>Improves Accuracy</p>
-      <p>Employee Satisfy </p>
+      <p style={{display:'none'}}>Kosten</p>
+      <p>Kosten</p>
+      <p>Effizienzy </p>
       <p>Enhance Revenue</p>
-      <p>Reduce Cost</p>
-      <p>Costumer Satisfy</p>
-      <p>Improves Accuracy</p>
-      <p>Employee Satisfy </p>
+      <p>Umsatz</p>
+      <p>Kundenzufriedenheit</p>
+      <p>Genauigkeit</p>
+      <p>Kosten</p>
+      <p>Effizienzy </p>
       <p>Enhance Revenue</p>
-      <p>Reduce Cost</p>
+      <p>Umsatz</p>
+      <p>Kundenzufriedenheit</p>
+      <p>Genauigkeit</p>
+     
 
     </div>
+ 
     </div>
   );
 };

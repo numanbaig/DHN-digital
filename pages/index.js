@@ -21,6 +21,64 @@ import LottieAnimation from "./Components/LottieAnimation";
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import ReCAPTCHA from "react-google-recaptcha";
+import steps1 from "../public/assist/image/6steps1.svg"
+import steps2 from "../public/assist/image/6steps2.svg"
+import steps3 from "../public/assist/image/6steps3.svg"
+import steps4 from "../public/assist/image/6steps4.svg"
+import steps5 from "../public/assist/image/6steps5.svg"
+import steps6 from "../public/assist/image/6steps6.svg"
+import beratungIcon from "../public/assist/image/Beratung.svg"
+import workshopIcon from "../public/assist/image/Workshop.svg"
+import chatbotsIcon from "../public/assist/image/Chatbots.svg"
+
+
+
+
+const SIMPLE_STEPS= [
+  {
+    title:'Ideation',
+    icon:steps1
+  },
+  {
+    title:'Solution Concept',
+    icon:steps2
+  },
+  {
+    title:'Prototype & Poc',
+    icon:steps3
+  },
+  {
+    title:'MVP & Testing',
+    icon:steps4
+  },
+  {
+    title:'Installations           ',
+    icon:steps5
+  },
+  {
+    title:'Scaling',
+    icon:steps6
+  }
+] 
+const WORKSHOPS = [
+  {
+    heading:'Beratung',
+    title:'Wir helfen Ihnen dabei, echten Mehrwert aus dem KI-Hype zu ziehen. Gemeinsam finden wir die besten Einsatzmöglichkeiten für KI in Ihrem Unternehmen, um Sie auch weiterhin wettbewerbsfähig in der Zukunft aufzustellen.',
+    icon:beratungIcon
+
+  },
+  {
+    heading:'KI Workshops',
+    title:'Wir klären Ihr Team über Chancen, Risiken und den richtigen Umgang mit KI-Technologien auf und verschaffen Ihnen einen ganzheitlichen Überblick. Live und mit individuellen, praxisbezogenen Beispielen schulen wir Ihre Mitarbeiter in der direkten Anwendung von KI-Lösungen im Arbeitsalltag.',
+    icon:workshopIcon
+
+  }, {
+    heading:'Individuelle Chatbots',
+    title:'Erleichtern Sie Ihre interne sowie externe Kommunikation und steigern Sie Ihre Produktivität. Arbeiten Sie effizient mit Ihren eigenen Daten.',
+    icon:chatbotsIcon
+
+  }
+]
 
 export default function Home() {
   const initialValues = {
@@ -35,7 +93,6 @@ export default function Home() {
     firstName: Yup.string().required('Required'),
     lastName: Yup.string().required('Required'),
     email: Yup.string().email('Invalid email format').required('Required'),
-    phoneNumber: Yup.string().required('Required'),
     message: Yup.string().required('Required'),
   });
   const cardStyle = {
@@ -161,17 +218,16 @@ export default function Home() {
         <div className="sec1-container spacer">
           <div style={{ maxWidth: '658px' }}>
             <h1 className="heading" style={{ color: '#fff' }}>
-              Digitalization for the self-<br />employed and SEMs.
+              Automatisierung für KMU mit individuellen KI-Lösungen.
             </h1>
             <p className="paragraph" style={{ color: '#fff' }}>
-              Effizienz mit individuellen KI Lösungen" and then the normal text Deutsche Unternehmen stehen mehr denn je vor der Herausforderung,
-              effizienter zu werden. Das erreichen wir durch Automatisierungen mit geeigneten KI Lösungen.
+              Der deutsche Mittelstand ist das Rückgrat unserer Gesellschaft und steht mehr denn je vor der Herausforderung, effizient zu arbeiten. Wir haben uns zusammengeschlossen und helfen KMU aus Überzeugung dabei, Prozesse mit individuellen KI-Lösungen zu automatisieren.
             </p>
             <div className="sec1-button">
               <Image className="left-arrow" src={arrow1} alt="Arrow Left" width={50} height={50} />
               <Image className="left-arrow-mob" src={arrow} alt="Arrow Left" width={30} height={30} />
 
-              Contact is now without obligation
+              Jetzt unverbindlich Kontakt aufnehmen
             </div>
           </div>
           <LottieAnimation />
@@ -181,46 +237,49 @@ export default function Home() {
         <section ref={aiRef} className="sec2-container spacer">
           <div className="sec2-inner-container">
             <div className="sec2-card">
-              <h1 className="heading">Automation (AI)</h1>
+              <h1 className="heading">Automatisierung durch KI</h1>
               <p className="paragraph" style={{ paddingTop: '30px', paddingBottom: '16px' }}>
-                Time is money. <br />Automate your processes and save both.
+                Zeit ist Geld.<br /> Automatisieren Sie Ihre Prozesse und sparen Sie beides.
               </p>
               <p className="sab-paragraph">
-                DHN provides an Intelligent Document Processing solution that converts imported data from various document types into the desired results.
-                Thanks to AI technology, you are able to extract all important data from your documents and process it according to your purpose. This allows
-                you to automate your workflows and save both time and costs. This allows you to fully focus on your core tasks.
+                Wir entwickeln Lösungen für ihre Aufgaben, die wie ein intelligenter Assistent arbeiten. Dieser Assistent kann z.B. große Datenmengen aus verschiedenen Dokumenten lesen und in die gewünschten Ergebnisse weiterverarbeiten. Arbeit, die normalerweise Stunden dauert, kann so in Sekundenschnelle erledigt werden.
+                Automatisieren Sie Ihre Arbeitsabläufe, sparen Sie Zeit und Geld und konzentrieren Sie sich auf Ihre wichtigsten Aufgaben.
+
               </p>
               <div className="sec2-bnt-container">
-                <button className="btn-secondary1">Contact Us</button>
-                <button className="btn-primary">Book a demo</button>
+                <button className="btn-secondary1">Kontaktieren Sie uns </button>
+                <button className="btn-primary">Demo buchen</button>
               </div>
             </div>
             <Slideshow />
           </div>
           <div className="sec2-buttons flex">
-            <div className="slide-item">Delivery Documents</div>
-            <div className="slide-item">Bills</div>
-            <div className="slide-item">Orders</div>
-            <div className="slide-item">Contracts</div>
-            <div className="slide-item">And much more</div>
+            <div className="slide-item">Lieferdokumente</div>
+            <div className="slide-item">Rechnungen</div>
+            <div className="slide-item">Bestellungen</div>
+            <div className="slide-item">Verträge</div>
+            <div className="slide-item">…und vieles mehr</div>
           </div>
           <DocumentSlider />
         </section>
         <section className="section3 spacer">
-          <h1 className="heading text-center">6 Simple Steps</h1>
-          <p className="paragraph text-center" style={{ paddingTop: '8px' }}>Six simple steps to find your next star performer!</p>
+          <h1 className="heading text-center">6 Einfache Schritte</h1>
+          <p className="paragraph text-center" style={{ paddingTop: '8px' }}>6 Einfache Schritte von der Idee zur Realität. Gemeinsam machen wir Künstliche Intelligenz nutzbar und schaffen echten Mehrwert.</p>
           <div className="section3-container grid3">
-            {['Ideation', 'Solution Concept', 'Prototype & Poc', 'MVP & Testing', 'Installations', 'Scaling'].map((step, index) => (
+            {SIMPLE_STEPS.map((step, index) => (
               <div className="section3-cards" key={index}>
+                <div style={{display:'flex' , justifyContent:'space-between', alignItems:'center'}}>
                 <div className="section3-button">{index + 1}</div>
-                <h1>{step}</h1>
+                <Image src={step.icon} width={40} height={30} />
+                </div>
+                <h1>{step.title}</h1>
                 <p className="paragraph">
-                  Ideation sparks creativity, <span style={{ color: '#567bd9' }}>driving innovation in</span> <span style={{ color: '#FF8310' }}>problem-solving</span> and product development. Ideation sparks creativity, driving innovation in problem-solving and product development.
+                  Ideation sparks creativity, <span style={{ color: '#567bd9' }}>driving innovation in</span> problem-solving and product development. Ideation sparks creativity, driving innovation in problem-solving and product development.
                 </p>
                 <div className="section3-button-container ">
+                  {/* <button className="btn-secondary">Lorem ipsum</button>
                   <button className="btn-secondary">Lorem ipsum</button>
-                  <button className="btn-secondary">Lorem ipsum</button>
-                  <button className="btn-secondary">Lorem ipsum</button>
+                  <button className="btn-secondary">Lorem ipsum</button> */}
                 </div>
               </div>
             ))}
@@ -230,20 +289,22 @@ export default function Home() {
         </section>
 
         <section className="section4 spacer">
-          <h1 className="heading text-center">AI Workshops & Individual Chatbots</h1>
-          <div className="section4-container grid2">
-            {['AI Workshop', 'Individual chatbots'].map((workshop, index) => (
+          <h1 className="heading text-center">KI Beratung, Workshops & Individuelle Chatbots</h1>
+          <p className="paragraph text-center" style={{ paddingTop: '8px' }}>Ihr KI-Partner für weitere Potenziale </p>
+
+          <div className="section4-container grid3">
+            {WORKSHOPS.map((items, index) => (
               <div className="section4-cards shadow" key={index}>
-                <h2 className="heading">{workshop}</h2>
-                <p className="sab-paragraph">Increase efficiency and make internal/external communication much easier</p>
-                <p className="sab-paragraph" style={{ fontWeight: 700, paddingTop: '18px' }}>Work efficiently with your own data</p>
-                <p className="sab-paragraph">DHN provides an Intelligent Document Processing solution that converts imported data from various document types into the desired results.</p>
+                <div style={{display:"flex", justifyContent:'end'}}> <Image src={items.icon} width={40} height={30}/> </div>
+                <h2 className="heading" style={{fontSize:'30px' , marginTop:"20px"}}>{items.heading}</h2>
+                <p className="sab-paragraph">{items.title}</p>
+              
               </div>
             ))}
           </div>
         </section>
         <section class="section5 spacer">
-          <h1 class="heading text-center">Services Offered</h1>
+          <h1 class="heading text-center">Unsere weitere Leistungen</h1>
           <p class="paragraph text-center" style={{ paddingTop: '8px' }}>Web Design, Web Development, UI & UX Design
           </p>
           <div class="section5-container grid3">
@@ -258,40 +319,45 @@ export default function Home() {
 
               <div className="show-hover">
                 <p style={{ fontSize: '28px', fontWeight: 700, color: '#fff', paddingBottom: '8px' }}> Web Design</p>
-                <p style={{ fontSize: '10px', fontWeight: 400, color: '#fff', width: '291px' }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nisl eros, pulvinar facilisis justo mollis </p>
+                <p style={{ fontSize: '10px', fontWeight: 400, color: '#fff', width: '291px' }}>Konzeption & Planung, Wireframing, Design-Entwurf, Responsive Design </p>
               </div>
             </div>
-            <div class="section5-card" style={cardStyle1}>
+            <div class="section5-card" style={cardStyle2}>
               <div class="section5-button">
                 Web Development
               </div>
               <div className="show-hover">
                 <p style={{ fontSize: '28px', fontWeight: 700, color: '#fff', paddingBottom: '8px' }}> Web Development</p>
-                <p style={{ fontSize: '10px', fontWeight: 400, color: '#fff', width: '291px' }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nisl eros, pulvinar facilisis justo mollis </p>
+                <p style={{ fontSize: '10px', fontWeight: 400, color: '#fff', width: '291px' }}> Frontend- & Backend-Entwicklung, Content-Management-Systeme (CMS), SEO-Optimierung, Security & Datenschutz, Leistungsoptimierung, Wartung & Updates </p>
               </div>
             </div>
-            <div class="section5-card" style={cardStyle2}>
+            <div class="section5-card" style={cardStyle1}>
               <div class="section5-button">
                 UI &UX Design
               </div>
 
               <div className="show-hover">
                 <p style={{ fontSize: '28px', fontWeight: 700, color: '#fff', paddingBottom: '8px' }}> UI &UX Design</p>
-                <p style={{ fontSize: '10px', fontWeight: 400, color: '#fff', width: "251px" }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nisl eros, pulvinar facilisis justo mollis </p>
+                <p style={{ fontSize: '10px', fontWeight: 400, color: '#fff', width: "251px" }}>Benutzererfahrung (UX), Benutzeroberfläche (UI), Grafikdesign und Multimedia-Elemente, Prototypin </p>
               </div>
             </div>
           </div>
         </section>
 
         <section className="section6 spacer">
-          <h1 className="heading text-center">We help SMEs out of conviction</h1>
+          <h1 className="heading text-center">Wir helfen KMU aus Überzeugung</h1>
           <p className="sab-paragraph text-center" style={{ paddingTop: '6px' }}>
-            As two young and digitally savvy minds from Northern Germany, we have set ourselves the goal of providing German medium-sized businesses with advice and support in the digital age. We achieve this with our expertise and an extensive network of digital specialists.. .
+            Als zwei junge und digital affine Köpfe aus Norddeutschland stehen wir dem deutschen Mittelstand im digitalen Zeitalter mit Rat und Tat zur Seite. Dies gelingt uns mit unserer Expertise und einem umfangreichen Netzwerk an digitalen Spezialisten.
           </p>
           <div className="section6-container ">
             {[
-              { name: 'Djark Andresen', title: 'Managing Director', image: dJark },
-              { name: 'Hauke ​​Kay Pleß', title: 'Managing Director', image: hauke },
+              { name: 'Nils Espey', title: 'Geschäftsführer', dec: "Ihr Ansprechpartner & Berater für alles rund um Ihre Projekte. Ein echter Macher!", image: dJark },
+              {
+                name: 'Hauke ​​Kay Pleß',
+                title: 'Geschäftsführer',
+                disc: 'Ihr pragmatischer Lösungsarchitekt im Hintergrund. Ein echter Stratege!',
+                image: hauke
+              },
             ].map((person, index) => (
               <div className="section6-card" key={index}>
                 <p className="paragraph" style={{ fontWeight: 700 }}>{person.name}</p>
@@ -403,7 +469,7 @@ export default function Home() {
                       <Field className="contect-input" type="text" id="message" name="message" style={{ maxWidth: "100%" }} />
                       <ErrorMessage className="error-message" name="message" component="div" />
                     </div>
-                    <div style={{marginTop:'40px'}}>
+                    <div style={{ marginTop: '40px' }}>
 
                       <ReCAPTCHA
                         sitekey={SITE_KEY}
@@ -412,16 +478,16 @@ export default function Home() {
                       />
                     </div>
 
-                      <div className="contact-btn">
-                        <button type="submit"
-                        //  disabled={ loading} 
-                        //  style={{
-                        //    backgroundColor: ( loading) ? '#EBEBE4' : '#567BD9'
-                        //  }}
-                        >
-                          Send Message
-                        </button>
-                      </div>
+                    <div className="contact-btn">
+                      <button type="submit"
+                      //  disabled={ loading} 
+                      //  style={{
+                      //    backgroundColor: ( loading) ? '#EBEBE4' : '#567BD9'
+                      //  }}
+                      >
+                        Send Message
+                      </button>
+                    </div>
 
                   </Form>
                 )}
