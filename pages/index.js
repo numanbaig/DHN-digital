@@ -138,13 +138,11 @@ export default function Home() {
 
   const handleCancelClick = (event) => {
     event.stopPropagation();
-    console.log("hahhah cancel karoo yar")
     setMenuOpen(false);
   };
 
   const handleOutsideClick = (event) => {
     if (menuRef.current && !menuRef.current.contains(event.target)) {
-      console.log("Clicked outside");
       setMenuOpen(false);
     }
   };
