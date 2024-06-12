@@ -394,13 +394,14 @@ export default function Home() {
                 name: 'Nils Espey',
                 title: 'Geschäftsführer',
                 dec: "Ihr Ansprechpartner & Berater für alles rund um Ihre Projekte. Ein echter Macher!",
-                image: dJark
+                image: hauke
               },
+              
               {
                 name: 'Hauke ​​Kay Pleß',
                 title: 'Geschäftsführer',
                 dec: 'Ihr pragmatischer Lösungsarchitekt im Hintergrund. Ein echter Stratege!',
-                image: hauke
+                image: dJark
               },
             ].map((person, index) => (
               <div className="section6-card" key={index}>
