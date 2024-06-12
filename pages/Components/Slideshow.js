@@ -55,7 +55,7 @@ const SlideShow = () => {
 
   return (
     <div className='slider-improve' style={{width:'100%'}}>
-      <h1 className='heading' style={{textAlign:'center', fontSize:'34px'}}>Verbesserm Sie jetzt</h1>
+      {/* <h1 className='heading' style={{textAlign:'center', fontSize:'34px'}}>Verbesserm Sie jetzt</h1> */}
     <div className={`slide-container flex`}>
       <p style={{display:'none'}}>Kosten</p>
       <p>Kosten</p>

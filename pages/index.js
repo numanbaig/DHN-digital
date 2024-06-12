@@ -21,15 +21,15 @@ import LottieAnimation from "./Components/LottieAnimation";
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import ReCAPTCHA from "react-google-recaptcha";
-import steps1 from "../public/assist/image/6steps1.svg"
-import steps2 from "../public/assist/image/6steps2.svg"
-import steps3 from "../public/assist/image/6steps3.svg"
-import steps4 from "../public/assist/image/6steps4.svg"
-import steps5 from "../public/assist/image/6steps5.svg"
-import steps6 from "../public/assist/image/6steps6.svg"
-import beratungIcon from "../public/assist/image/Beratung.svg"
-import workshopIcon from "../public/assist/image/Workshop.svg"
-import chatbotsIcon from "../public/assist/image/Chatbots.svg"
+import steps1 from "../public/assist/image/6steps1.png"
+import steps2 from "../public/assist/image/6steps2.png"
+import steps3 from "../public/assist/image/6steps3.png"
+import steps4 from "../public/assist/image/6steps4.png"
+import steps5 from "../public/assist/image/6steps5.png"
+import steps6 from "../public/assist/image/6steps6.png"
+import beratungIcon from "../public/assist/image/meeting.png"
+import workshopIcon from "../public/assist/image/Workshop.png"
+import chatbotsIcon from "../public/assist/image/messages.png"
 
 
 
@@ -38,49 +38,49 @@ const SIMPLE_STEPS = [
   {
     title: 'Ideenfindung',
     icon: steps1,
-    dec: 'Zusammen <span style="color:#140A8B">analysieren  </span>wir Ihre Aufgaben und Prozesse und finden Anwendungsfälle mit echtem Mehrwehrt'
+    dec: 'Zusammen <span style="color:#407BFF">analysieren  </span>wir Ihre Aufgaben und Prozesse und finden Anwendungsfälle mit echtem Mehrwehrt'
   },
   {
     title: 'Lösungskonzept',
     icon: steps2,
-    dec: 'Wir erarbeiten <span style="color:#140A8B"> gemeinsam  Lösungsideen </span> für die Anwendungsfälle.'
+    dec: 'Wir erarbeiten <span style="color:#407BFF"> gemeinsam  Lösungsideen </span> für die Anwendungsfälle.'
   },
   {
     title: 'Prototyp & PoC',
     icon: steps3,
-    dec: 'Mit schnellen  <span style="color:#140A8B"> Prototypen und Proof </span> of Concepts prüfen wir die Lösungsideen.'
+    dec: 'Mit schnellen  <span style="color:#407BFF"> Prototypen und Proof </span> of Concepts prüfen wir die Lösungsideen.'
   },
   {
     title: 'MVP & Tests',
     icon: steps4,
-    dec: 'Vielversprechende <span style="color:#140A8B"> Prototypen entwickeln </span> wir zügig zu funktionierenden, echten Lösungen.'
+    dec: 'Vielversprechende <span style="color:#407BFF"> Prototypen entwickeln </span> wir zügig zu funktionierenden, echten Lösungen.'
   },
   {
     title: 'Inbetriebnahme',
     icon: steps5,
-    dec: 'Gemeinsam <span style="color:#140A8B"> integrieren wir die fertige </span> Lösung in die bestehenden Abläufe und Prozesse.'
+    dec: 'Gemeinsam <span style="color:#407BFF"> integrieren wir die fertige </span> Lösung in die bestehenden Abläufe und Prozesse.'
   },
   {
     title: 'Skalierung',
     icon: steps6,
-    dec: 'Erfolgreiche Lösungen  bringen wir in die <span style="color:#140A8B">  breite Anwendung. </span>'
+    dec: 'Erfolgreiche Lösungen  bringen wir in die <span style="color:#407BFF">  breite Anwendung. </span>'
   }
 ]
 const WORKSHOPS = [
   {
     heading: 'Beratung',
-    title: 'Wir helfen Ihnen dabei, echten Mehrwert aus dem KI-Hype zu ziehen. Gemeinsam finden wir die besten Einsatzmöglichkeiten für KI in Ihrem Unternehmen, um Sie auch weiterhin wettbewerbsfähig in der Zukunft aufzustellen.',
+    title: 'Wir helfen Ihnen dabei, echten Mehrwert aus dem KI-Hype zu ziehen.<span style="color:#407BFF"> Gemeinsam finden wir die besten Einsatzmöglichkeiten für KI in Ihrem Unternehmen, </span> um Sie auch weiterhin wettbewerbsfähig in der Zukunft aufzustellen.',
     icon: beratungIcon
 
   },
   {
     heading: 'KI Workshops',
-    title: 'Wir klären Ihr Team über Chancen, Risiken und den richtigen Umgang mit KI-Technologien auf und verschaffen Ihnen einen ganzheitlichen Überblick. Live und mit individuellen, praxisbezogenen Beispielen schulen wir Ihre Mitarbeiter in der direkten Anwendung von KI-Lösungen im Arbeitsalltag.',
+    title: 'Wir klären Ihr Team über <span style="color:#407BFF"> Chancen, Risiken und den richtigen Umgang mit KI-Technologien </span> auf und verschaffen Ihnen einen ganzheitlichen Überblick. Live und mit individuellen, praxisbezogenen Beispielen schulen wir Ihre Mitarbeiter in der direkten Anwendung von KI-Lösungen im Arbeitsalltag.',
     icon: workshopIcon
 
   }, {
     heading: 'Individuelle Chatbots',
-    title: 'Erleichtern Sie Ihre interne sowie externe Kommunikation und steigern Sie Ihre Produktivität. Arbeiten Sie effizient mit Ihren eigenen Daten.',
+    title: 'Erleichtern Sie Ihre interne sowie externe Kommunikation und steigern Sie Ihre Produktivität. <span style="color:#407BFF"> Arbeiten Sie effizient mit Ihren eigenen Daten. </span>',
     icon: chatbotsIcon
 
   }
@@ -123,36 +123,49 @@ export default function Home() {
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [reCaptchaValue, setReCaptchaValue] = useState('')
   const [loading, setLoading] = useState(false)
-  // const [token, setToken] = useState("6LdJr_ApAAAAAJwsg5FdAKiqBxOPDM3HoOJpMcaF");
   const menuRef = useState(null)
   const faqsRef = useRef(null);
   const aiRef = useRef(null);
+  const contactRef = useRef(null)
   const recaptcha = useRef()
+  
   const SITE_KEY = "6Lfrb_EpAAAAAB8qB_GEpn8hvbZRZY1fW0zS6ol3"
-  console.log(SITE_KEY);
 
 
+  const handleMenuClick = () => {
+    setMenuOpen(true);
+  };
+
+  const handleCancelClick = (event) => {
+    event.stopPropagation();
+    console.log("hahhah cancel karoo yar")
+    setMenuOpen(false);
+  };
+
+  const handleOutsideClick = (event) => {
+    if (menuRef.current && !menuRef.current.contains(event.target)) {
+      console.log("Clicked outside");
+      setMenuOpen(false);
+    }
+  };
   const scrollToSection = (ref) => {
     ref.current.scrollIntoView({ behavior: 'smooth' });
     setMenuOpen(false)
   };
-  const handleOutsideClick = (event) => {
-    if (menuRef.current && !menuRef.current.contains(event.target)) {
-      setMenuOpen(false);
-    }
-  };
+
   useEffect(() => {
     if (menuOpen) {
-      document.addEventListener('mousedown', handleOutsideClick);
+      setTimeout(() => {
+        document.addEventListener('click', handleOutsideClick);
+      }, 0);
     } else {
-      document.removeEventListener('mousedown', handleOutsideClick);
+      document.removeEventListener('click', handleOutsideClick);
     }
 
     return () => {
-      document.removeEventListener('mousedown', handleOutsideClick);
+      document.removeEventListener('click', handleOutsideClick);
     };
   }, [menuOpen]);
-
   const onSubmit = async (values, { resetForm }) => {
 
     // const captchaValue = recaptcha.current.getValue()
@@ -212,13 +225,34 @@ export default function Home() {
             </div>
             <div className="header-btn-container">
               <button className="btn-secondary1 login-button">Log in</button>
-              <button className="btn-primary">Contact Us</button>
+              <button onClick={() => scrollToSection(contactRef)} className="btn-primary">Contact Us</button>
 
-              <Image onClick={() => { setMenuOpen(!menuOpen) }} height={menuOpen ? 20 : 24} width={menuOpen ? 20 : 24} style={{ marginLeft: '14px', cursor: "pointer" }} src={menuOpen ? cancelIcon : menuIcon} alt="Menu Button" />
+              <div ref={menuRef}>
+                {!menuOpen ? (
+                  <Image
+                    onClick={handleMenuClick}
+                    height={24}
+                    width={24}
+                    style={{ marginLeft: '14px', cursor: 'pointer' }}
+                    src={menuIcon}
+                    alt="Menu Button"
+                  />
+                ) : (
+                  <Image
+                    onClick={handleCancelClick}
+                    height={20}
+                    width={20}
+                    style={{ marginLeft: '14px', cursor: 'pointer' }}
+                    src={cancelIcon}
+                    alt="Cancel Button"
+                  />
+                )}
+              </div>
 
             </div>
           </header>
         </div>
+
       </section>
       <section className="section1" id="section">
         <div className="sec1-container spacer">
@@ -253,8 +287,8 @@ export default function Home() {
 
               </p>
               <div className="sec2-bnt-container">
-                <button className="btn-secondary1">Kontaktieren Sie uns </button>
-                <button className="btn-primary">Demo buchen</button>
+                <button onClick={() => scrollToSection(contactRef)} className="btn-secondary1">Kontaktieren Sie uns </button>
+                <button onClick={() => scrollToSection(contactRef)} className="btn-primary">Demo buchen</button>
               </div>
             </div>
             <Slideshow />
@@ -275,14 +309,14 @@ export default function Home() {
             {SIMPLE_STEPS.map((step, index) => (
               <div className="section3-cards" key={index}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                  <Image src={step.icon} width={30} height={30} />
                   <div className="section3-button">{index + 1}</div>
-                  <Image src={step.icon} width={40} height={30} />
                 </div>
                 <h1>{step.title}</h1>
                 <p className="paragraph"
-                  dangerouslySetInnerHTML={{ __html:step.dec }}
+                  dangerouslySetInnerHTML={{ __html: step.dec }}
                 />
-                
+
                 <div className="section3-button-container ">
                   {/* <button className="btn-secondary">Lorem ipsum</button>
                   <button className="btn-secondary">Lorem ipsum</button>
@@ -302,9 +336,9 @@ export default function Home() {
           <div className="section4-container grid3">
             {WORKSHOPS.map((items, index) => (
               <div className="section4-cards shadow" key={index}>
-                <div style={{ display: "flex", justifyContent: 'end' }}> <Image src={items.icon} width={40} height={30} /> </div>
+                <div > <Image src={items.icon} width={30} height={30} /> </div>
                 <h2 className="heading" style={{ fontSize: '30px', marginTop: "20px" }}>{items.heading}</h2>
-                <p className="sab-paragraph">{items.title}</p>
+                <p className="sab-paragraph" dangerouslySetInnerHTML={{ __html: items.title }} />
 
               </div>
             ))}
@@ -326,7 +360,7 @@ export default function Home() {
 
               <div className="show-hover">
                 <p style={{ fontSize: '28px', fontWeight: 700, color: '#fff', paddingBottom: '8px' }}> Web Design</p>
-                <p style={{ fontSize: '10px', fontWeight: 400, color: '#fff', width: '291px' }}>Konzeption & Planung, Wireframing, Design-Entwurf, Responsive Design </p>
+                <p style={{ fontSize: '16px', fontWeight: 400, color: '#fff', width: '291px' }}>Konzeption & Planung, Wireframing, Design-Entwurf, Responsive Design </p>
               </div>
             </div>
             <div class="section5-card" style={cardStyle2}>
@@ -335,7 +369,7 @@ export default function Home() {
               </div>
               <div className="show-hover">
                 <p style={{ fontSize: '28px', fontWeight: 700, color: '#fff', paddingBottom: '8px' }}> Web Development</p>
-                <p style={{ fontSize: '10px', fontWeight: 400, color: '#fff', width: '291px' }}> Frontend- & Backend-Entwicklung, Content-Management-Systeme (CMS), SEO-Optimierung, Security & Datenschutz, Leistungsoptimierung, Wartung & Updates </p>
+                <p style={{ fontSize: '16px', fontWeight: 400, color: '#fff', width: '291px' }}> Frontend- & Backend-Entwicklung, Content-Management-Systeme (CMS), SEO-Optimierung, Security & Datenschutz, Leistungsoptimierung, Wartung & Updates </p>
               </div>
             </div>
             <div class="section5-card" style={cardStyle1}>
@@ -345,7 +379,7 @@ export default function Home() {
 
               <div className="show-hover">
                 <p style={{ fontSize: '28px', fontWeight: 700, color: '#fff', paddingBottom: '8px' }}> UI &UX Design</p>
-                <p style={{ fontSize: '10px', fontWeight: 400, color: '#fff', width: "251px" }}>Benutzererfahrung (UX), Benutzeroberfläche (UI), Grafikdesign und Multimedia-Elemente, Prototypin </p>
+                <p style={{ fontSize: '16px', fontWeight: 400, color: '#fff', width: "251px" }}>Benutzererfahrung (UX), Benutzeroberfläche (UI), Grafikdesign und Multimedia-Elemente, Prototypin </p>
               </div>
             </div>
           </div>
@@ -390,13 +424,17 @@ export default function Home() {
 
           <div class="FAQs-Container grid3">
             <div class=" FAQs-card shadow">
-              <p class="sab-paragraph" style={{ color: '#567bd9', fontWeight: '700' }}> What does working with you start?</p>
-              <p class="sab-paragraph faq-text" style={{ paddingTop: "6px" }}>
-                Personal contact is particularly important to us. Therefore, we first explore your potential and the
-                possibilities for collaboration in a detailed discussion. Please contact us if you would like to have a
-                non-binding initial consultation to find out whether we are a good fit and how we could help you. Should
-                a collaboration arise,personal contact and uncomplicated, pragmatic collaboration are the top priority.
-              </p>
+              <div>
+                <p class="sab-paragraph" style={{ color: '#567bd9', fontWeight: '700' }}> What does working with you start?</p>
+              </div>
+              <div class="sab-paragraph faq-text">
+                <p style={{ paddingTop: "6px" }}>
+                  Personal contact is particularly important to us. Therefore, we first explore your potential and the
+                  possibilities for collaboration in a detailed discussion. Please contact us if you would like to have a
+                  non-binding initial consultation to find out whether we are a good fit and how we could help you. Should
+                  a collaboration arise,personal contact and uncomplicated, pragmatic collaboration are the top priority.
+                </p>
+              </div>
 
             </div>
             <div class="FAQs-card shadow">
@@ -446,7 +484,7 @@ export default function Home() {
 
               </div>
             </div>
-            <div >
+            <div ref={contactRef}>
               <Formik
                 initialValues={initialValues}
                 validationSchema={validationSchema}
@@ -528,7 +566,7 @@ export default function Home() {
       </footer>
       {menuOpen && <div className="menu-container" ref={menuRef}>
         <ul>
-          <li onClick={() => scrollToSection(homeRef)}>Home</li>
+          <li>Home</li>
           <li onClick={() => scrollToSection(aiRef)}>Automatic (AI)</li>
           <li>Advice</li>
           <li>Website</li>

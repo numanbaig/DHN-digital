@@ -110,11 +110,12 @@ input:-internal-autofill-selected {
     rgba(69, 94, 198, 0.85) 0%,
     rgba(69, 94, 198, 0.85) 99.2%
   );
+  
+  
 }
 
 .sec1-container {
-  padding-top: 159px;
-  padding-bottom: 231px;
+  
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -143,6 +144,7 @@ input:-internal-autofill-selected {
   line-height: 27px;
   margin: 0px;
   font-family: "Roboto";
+  transition: color 0.3s ease;
 }
 .sab-paragraph-li {
   margin-left: 15px;
@@ -162,6 +164,10 @@ input:-internal-autofill-selected {
   max-width: 450px;
   cursor: pointer;
   margin-top: 25px;
+}
+.sec1-button:hover {
+  background-color: #dddd; /* Background color changes to the primary color */
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); */
 }
 
 .sec1-image {
@@ -339,6 +345,13 @@ input:-internal-autofill-selected {
   background-color: #ffffff;
   padding: 20px 40px;
   height: 439px;
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.section4-cards:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
 }
 
 .section5-container {
@@ -353,6 +366,7 @@ input:-internal-autofill-selected {
   justify-content: center;
   align-items: center;
   position: relative;
+  cursor: pointer;
 }
 .section5-card {
   position: relative;
@@ -468,12 +482,20 @@ input:-internal-autofill-selected {
   justify-content: center;
 }
 .FAQs-Container {
-  padding: 50px 0px 90px 0px;
+  margin: 50px 0px 90px 0px;
+
 }
 
 .FAQs-card {
   padding: 13px 17px;
   background-color: #fff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.FAQs-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
 }
 .contect-section {
   /* background-color: #fff; */
@@ -483,6 +505,12 @@ input:-internal-autofill-selected {
   grid-template-columns: 30% 60%;
   gap: 50px !important;
   background-color: #fff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+}
+.contect-container:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 .contect-card {
   padding: 20px 34px 96px 34px;
@@ -544,8 +572,7 @@ input:-internal-autofill-selected {
   justify-content: space-around;
   align-items: center;
 }
-.menu-cntainer {
-}
+
 .flex1 {
   display: flex;
   align-items: center;
@@ -572,7 +599,7 @@ input:-internal-autofill-selected {
   border-radius: 4px;
   background-color: #ffffff;
   position: absolute;
-  top: 8%;
+  top: 9.5%;
   right: 4%;
   background-color: #fff;
   padding: 0px 20px;

@@ -2,12 +2,12 @@ import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import steps1 from "../../public/assist/image/6steps1.svg"
-import steps2 from "../../public/assist/image/6steps2.svg"
-import steps3 from "../../public/assist/image/6steps3.svg"
-import steps4 from "../../public/assist/image/6steps4.svg"
-import steps5 from "../../public/assist/image/6steps5.svg"
-import steps6 from "../../public/assist/image/6steps6.svg"
+import steps1 from "../../public/assist/image/6steps1.png"
+import steps2 from "../../public/assist/image/6steps2.png"
+import steps3 from "../../public/assist/image/6steps3.png"
+import steps4 from "../../public/assist/image/6steps4.png"
+import steps5 from "../../public/assist/image/6steps5.png"
+import steps6 from "../../public/assist/image/6steps6.png"
 import Image from "next/image";
 
 const SIMPLE_STEPS= [
@@ -75,8 +75,8 @@ const StepsSlider = () => {
         {SIMPLE_STEPS.map((step, index) => (
           <div className="section3-cards" key={index} style={{marginBottom:"10px"}}>
              <div style={{display:'flex' , justifyContent:'space-between', alignItems:'center'}}>
+                <Image src={step.icon} width={30} height={30} />
                 <div className="section3-button">{index + 1}</div>
-                <Image src={step.icon} width={40} height={30} />
                 </div>
                 <h1>{step.title}</h1>
             <p className="paragraph">
