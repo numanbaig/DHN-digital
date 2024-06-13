@@ -469,6 +469,14 @@ transition: transform 0.3s ease, box-shadow 0.3s ease;
   width: 100%;
   max-width: 486px;
   height: 484px;
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.section6-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
 }
 
 .section6-card img {
