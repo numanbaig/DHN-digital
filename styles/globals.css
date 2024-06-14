@@ -198,7 +198,7 @@ input:-internal-autofill-selected {
 
 .slide-container {
   position: relative;
-  height: 250px;
+  height: 100%;
   overflow: hidden;
   margin-top: 16px;
   padding: 15px;
@@ -232,6 +232,13 @@ input:-internal-autofill-selected {
 
 .text-center {
   text-align: center;
+}
+.datenschunt li {
+  margin-bottom: 10px;
+}
+.datenschunt{
+  color: #333333;
+  line-height:30px;
 }
 
 .sec2-buttons {
@@ -301,7 +308,7 @@ input:-internal-autofill-selected {
   width: 53px;
   height: 26px;
   border-radius: 30px;
-  background-color: #567bd9;
+  background-color: #160B8B;
   color: #fff;
   display: flex;
   justify-content: center;
@@ -481,7 +488,6 @@ transition: transform 0.3s ease, box-shadow 0.3s ease;
 
 .section6-card img {
   width: 100%;
-  max-width: 308px;
   height: 295px;
 }
 

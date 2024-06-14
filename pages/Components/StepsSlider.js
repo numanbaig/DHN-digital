@@ -10,32 +10,38 @@ import steps5 from "../../public/assist/image/6steps5.png"
 import steps6 from "../../public/assist/image/6steps6.png"
 import Image from "next/image";
 
-const SIMPLE_STEPS= [
+const SIMPLE_STEPS = [
   {
-    title:'Ideation',
-    icon:steps1
+    title: 'Ideenfindung',
+    icon: steps1,
+    dec: 'Zusammen <span style="color:#160B8B">analysieren  </span>wir Ihre Aufgaben und Prozesse und finden Anwendungsfälle mit echtem Mehrwehrt'
   },
   {
-    title:'Solution Concept',
-    icon:steps2
+    title: 'Lösungskonzept',
+    icon: steps2,
+    dec: 'Wir erarbeiten <span style="color:#160B8B"> gemeinsam  Lösungsideen </span> für die Anwendungsfälle.'
   },
   {
-    title:'Prototype & Poc',
-    icon:steps3
+    title: 'Prototyp & PoC',
+    icon: steps3,
+    dec: 'Mit schnellen  <span style="color:#160B8B"> Prototypen und Proof </span> of Concepts prüfen wir die Lösungsideen.'
   },
   {
-    title:'MVP & Testing',
-    icon:steps4
+    title: 'MVP & Tests',
+    icon: steps4,
+    dec: 'Vielversprechende <span style="color:#160B8B"> Prototypen entwickeln </span> wir zügig zu funktionierenden, echten Lösungen.'
   },
   {
-    title:'Installations           ',
-    icon:steps5
+    title: 'Inbetriebnahme',
+    icon: steps5,
+    dec: 'Gemeinsam <span style="color:#160B8B"> integrieren wir die fertige </span> Lösung in die bestehenden Abläufe und Prozesse.'
   },
   {
-    title:'Scaling',
-    icon:steps6
+    title: 'Skalierung',
+    icon: steps6,
+    dec: 'Erfolgreiche Lösungen  bringen wir in die <span style="color:#160B8B">  breite Anwendung. </span>'
   }
-] 
+]
 
 
 const StepsSlider = () => {
@@ -79,9 +85,10 @@ const StepsSlider = () => {
                 <div className="section3-button">{index + 1}</div>
                 </div>
                 <h1>{step.title}</h1>
-            <p className="paragraph">
-              Ideation sparks creativity, <span style={{ color: '#567bd9' }}>driving innovation in</span> <span style={{ color: '#FF8310' }}>problem-solving</span> and product development. Ideation sparks creativity, driving innovation in problem-solving and product development.
-            </p>
+                <p className="paragraph"
+                  dangerouslySetInnerHTML={{ __html: step.dec }}
+                />
+           
             <div className="section3-button-container">
               {/* <button className="btn-secondary">Lorem ipsum</button>
               <button className="btn-secondary">Lorem ipsum</button>

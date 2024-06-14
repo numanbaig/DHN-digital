@@ -1,5 +1,5 @@
 import Image from "next/image";
-import logo from "../public/assist/image/logo-dhn.digital.png"
+import logo from "../public/assist/image/logo-dhn.digital.webp"
 import arrow from "../public/assist/image/arrow-left1.svg"
 import arrow1 from "../public/assist/image/arrow-left.svg"
 
@@ -30,6 +30,7 @@ import steps6 from "../public/assist/image/6steps6.png"
 import beratungIcon from "../public/assist/image/meeting.png"
 import workshopIcon from "../public/assist/image/Workshop.png"
 import chatbotsIcon from "../public/assist/image/messages.png"
+import Link from "next/link";
 
 
 
@@ -38,49 +39,49 @@ const SIMPLE_STEPS = [
   {
     title: 'Ideenfindung',
     icon: steps1,
-    dec: 'Zusammen <span style="color:#407BFF">analysieren  </span>wir Ihre Aufgaben und Prozesse und finden Anwendungsfälle mit echtem Mehrwehrt'
+    dec: 'Zusammen <span style="color:#160B8B">analysieren  </span>wir Ihre Aufgaben und Prozesse und finden Anwendungsfälle mit echtem Mehrwehrt'
   },
   {
     title: 'Lösungskonzept',
     icon: steps2,
-    dec: 'Wir erarbeiten <span style="color:#407BFF"> gemeinsam  Lösungsideen </span> für die Anwendungsfälle.'
+    dec: 'Wir erarbeiten <span style="color:#160B8B"> gemeinsam  Lösungsideen </span> für die Anwendungsfälle.'
   },
   {
     title: 'Prototyp & PoC',
     icon: steps3,
-    dec: 'Mit schnellen  <span style="color:#407BFF"> Prototypen und Proof </span> of Concepts prüfen wir die Lösungsideen.'
+    dec: 'Mit schnellen  <span style="color:#160B8B"> Prototypen und Proof </span> of Concepts prüfen wir die Lösungsideen.'
   },
   {
     title: 'MVP & Tests',
     icon: steps4,
-    dec: 'Vielversprechende <span style="color:#407BFF"> Prototypen entwickeln </span> wir zügig zu funktionierenden, echten Lösungen.'
+    dec: 'Vielversprechende <span style="color:#160B8B"> Prototypen entwickeln </span> wir zügig zu funktionierenden, echten Lösungen.'
   },
   {
     title: 'Inbetriebnahme',
     icon: steps5,
-    dec: 'Gemeinsam <span style="color:#407BFF"> integrieren wir die fertige </span> Lösung in die bestehenden Abläufe und Prozesse.'
+    dec: 'Gemeinsam <span style="color:#160B8B"> integrieren wir die fertige </span> Lösung in die bestehenden Abläufe und Prozesse.'
   },
   {
     title: 'Skalierung',
     icon: steps6,
-    dec: 'Erfolgreiche Lösungen  bringen wir in die <span style="color:#407BFF">  breite Anwendung. </span>'
+    dec: 'Erfolgreiche Lösungen  bringen wir in die <span style="color:#160B8B">  breite Anwendung. </span>'
   }
 ]
 const WORKSHOPS = [
   {
     heading: 'Beratung',
-    title: 'Wir helfen Ihnen dabei, echten Mehrwert aus dem KI-Hype zu ziehen.<span style="color:#407BFF"> Gemeinsam finden wir die besten Einsatzmöglichkeiten für KI in Ihrem Unternehmen, </span> um Sie auch weiterhin wettbewerbsfähig in der Zukunft aufzustellen.',
+    title: 'Wir helfen Ihnen dabei, echten Mehrwert aus dem KI-Hype zu ziehen.<span style="color:#160B8B"> Gemeinsam finden wir die besten Einsatzmöglichkeiten für KI in Ihrem Unternehmen, </span> um Sie auch weiterhin wettbewerbsfähig in der Zukunft aufzustellen.',
     icon: beratungIcon
 
   },
   {
     heading: 'KI Workshops',
-    title: 'Wir klären Ihr Team über <span style="color:#407BFF"> Chancen, Risiken und den richtigen Umgang mit KI-Technologien </span> auf und verschaffen Ihnen einen ganzheitlichen Überblick. Live und mit individuellen, praxisbezogenen Beispielen schulen wir Ihre Mitarbeiter in der direkten Anwendung von KI-Lösungen im Arbeitsalltag.',
+    title: 'Wir klären Ihr Team über <span style="color:#160B8B"> Chancen, Risiken und den richtigen Umgang mit KI-Technologien </span> auf und verschaffen Ihnen einen ganzheitlichen Überblick. Live und mit individuellen, praxisbezogenen Beispielen schulen wir Ihre Mitarbeiter in der direkten Anwendung von KI-Lösungen im Arbeitsalltag.',
     icon: workshopIcon
 
   }, {
     heading: 'Individuelle Chatbots',
-    title: 'Erleichtern Sie Ihre interne sowie externe Kommunikation und steigern Sie Ihre Produktivität. <span style="color:#407BFF"> Arbeiten Sie effizient mit Ihren eigenen Daten. </span>',
+    title: 'Erleichtern Sie Ihre interne sowie externe Kommunikation und steigern Sie Ihre Produktivität. <span style="color:#160B8B"> Arbeiten Sie effizient mit Ihren eigenen Daten. </span>',
     icon: chatbotsIcon
 
   }
@@ -219,7 +220,9 @@ export default function Home() {
         <div className="spacer">
           <header className="header flex" style={{ position: 'relative' }}>
             <div>
+              <Link href="/">
               <Image src={logo} alt="Logo" className="logo" width={170} height={48} />
+              </Link>
             </div>
             <div className="header-btn-container">
               <button className="btn-secondary1 login-button">Log in</button>
@@ -411,7 +414,7 @@ export default function Home() {
                   {person.dec}
                 </p>
                 <div style={{ paddingTop: '47px' }}>
-                  <Image src={person.image} />
+                  <Image src={person.image} wi />
                 </div>
               </div>
             ))}
@@ -424,7 +427,7 @@ export default function Home() {
           <div class="FAQs-Container grid3">
             <div class=" FAQs-card shadow">
               <div>
-                <p class="sab-paragraph" style={{ color: '#567bd9', fontWeight: '700' }}> What does working with you start?</p>
+                <p class="sab-paragraph" style={{ color: '#160B8B', fontWeight: '700' }}> What does working with you start?</p>
               </div>
               <div class="sab-paragraph faq-text">
                 <p style={{ paddingTop: "6px" }}>
@@ -437,7 +440,7 @@ export default function Home() {
 
             </div>
             <div class="FAQs-card shadow">
-              <p class="sab-paragraph" style={{ color: '#567bd9', fontWeight: '700' }}> What benefits do I get from working with
+              <p class="sab-paragraph" style={{ color: '#160B8B', fontWeight: '700' }}> What benefits do I get from working with
                 you? </p>
               <ul class="sab-paragraph faq-text" style={{ padding: "6px 15px 0px 15px" }}>
                 <li class="sab-paragraph-li">Personal support from start to finish</li>
@@ -448,7 +451,7 @@ export default function Home() {
               </ul>
             </div>
             <div class="FAQs-card shadow">
-              <p class="sab-paragraph" style={{ color: '#567bd9', fontWeight: '700' }}> Can you do everything yourself?</p>
+              <p class="sab-paragraph" style={{ color: '#160B8B', fontWeight: '700' }}> Can you do everything yourself?</p>
               <p class="sab-paragraph faq-text" style={{ paddingTop: "6px" }}>
                 No. However, we bring our full expertise to every project. To ensure the best possible performance, we
                 also work with partners who are absolute specialists in their fieldand whom we can completely trust.
@@ -528,6 +531,15 @@ export default function Home() {
                     </div>
 
                     <div className="contact-btn">
+                      {loading ? 
+                     <button 
+                     //  disabled={ loading} 
+                     //  style={{
+                     //    backgroundColor: ( loading) ? '#EBEBE4' : '#567BD9'
+                     //  }}
+                     >
+                       Loading......
+                     </button>:  
                       <button type="submit"
                       //  disabled={ loading} 
                       //  style={{
@@ -536,6 +548,8 @@ export default function Home() {
                       >
                         Send Message
                       </button>
+                    }
+                     
                     </div>
 
                   </Form>
